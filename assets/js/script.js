@@ -1,10 +1,17 @@
 // This will check for and load anything from local storage before we do anything else
+function loadEvents() {
+  $("#nine-am").val(localStorage.getItem("nine-am"));
+  $("#ten-am").val(localStorage.getItem("ten-am"));
+  $("#evel-am").val(localStorage.getItem("evel-am"));
+  $("#twelve-pm").val(localStorage.getItem("twelve-pm"));
+  $("#one-pm").val(localStorage.getItem("one-pm"));
+  $("#two-pm").val(localStorage.getItem("two-pm"));
+  $("#three-pm").val(localStorage.getItem("three-pm"));
+  $("#four-pm").val(localStorage.getItem("four-pm"));
+  $("#five-pm").val(localStorage.getItem("five-pm"));
+}
 
-
-
-
-
-
+loadEvents();
 
 // this function will grab the current date using moment.js and display it bold in the header
 function todayDate() {
@@ -14,6 +21,7 @@ function todayDate() {
 }
 
 todayDate();
+
 // this function will grab the current time of day. It will be military time for ease of use later
 function currentTime() {
   let theTime = moment().format("HH");
@@ -43,8 +51,8 @@ function theFuture(classArg) {
 }
 
 // If Statement to assign color codes to inputs
-// function setBackground() {
-//   if (currentTime() === 9) {
+function setBackground() {
+  if (currentTime() === 9) {
     thePresent("nine-am");
     theFuture("ten-am");
     theFuture("elev-am");
@@ -54,135 +62,135 @@ function theFuture(classArg) {
     theFuture("three-pm");
     theFuture("four-pm");
     theFuture("five-pm");
-//   } else if (currentTime() === 10) {
-//     thePast("nine-am");
-//     thePresent("ten-am");
-//     theFuture("elev-am");
-//     theFuture("twelve-pm");
-//     theFuture("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 11) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePresent("elev-am");
-//     theFuture("twelve-pm");
-//     theFuture("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 12) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePresent("twelve-pm");
-//     theFuture("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 13) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePresent("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 14) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePresent("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 15) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePreset("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 16) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePast("three-pm");
-//     thePresent("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 17) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePast("three-pm");
-//     thePast("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() < 9 || currentTime() > 17) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePast("three-pm");
-//     thePast("four-pm");
-//     thePast("five-pm");
-//   }
-// }
+  } else if (currentTime() === 10) {
+    thePast("nine-am");
+    thePresent("ten-am");
+    theFuture("elev-am");
+    theFuture("twelve-pm");
+    theFuture("one-pm");
+    theFuture("two-pm");
+    theFuture("three-pm");
+    theFuture("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() === 11) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePresent("elev-am");
+    theFuture("twelve-pm");
+    theFuture("one-pm");
+    theFuture("two-pm");
+    theFuture("three-pm");
+    theFuture("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() === 12) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePresent("twelve-pm");
+    theFuture("one-pm");
+    theFuture("two-pm");
+    theFuture("three-pm");
+    theFuture("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() === 13) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePast("twelve-pm");
+    thePresent("one-pm");
+    theFuture("two-pm");
+    theFuture("three-pm");
+    theFuture("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() === 14) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePast("twelve-pm");
+    thePast("one-pm");
+    thePresent("two-pm");
+    theFuture("three-pm");
+    theFuture("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() === 15) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePast("twelve-pm");
+    thePast("one-pm");
+    thePast("two-pm");
+    thePreset("three-pm");
+    theFuture("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() === 16) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePast("twelve-pm");
+    thePast("one-pm");
+    thePast("two-pm");
+    thePast("three-pm");
+    thePresent("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() === 17) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePast("twelve-pm");
+    thePast("one-pm");
+    thePast("two-pm");
+    thePast("three-pm");
+    thePast("four-pm");
+    theFuture("five-pm");
+  } else if (currentTime() < 9 || currentTime() > 17) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePast("twelve-pm");
+    thePast("one-pm");
+    thePast("two-pm");
+    thePast("three-pm");
+    thePast("four-pm");
+    thePast("five-pm");
+  }
+}
 
-// setBackground();
+setBackground();
 
 // function to save input value into local storage
 
-function saveEvent (timeSlot) {
-    let saveSlot = $("#"+timeSlot).val();
-    console.log(saveSlot);
-    localStorage.setItem(timeSlot, saveSlot);
+function saveEvent(timeSlot) {
+  let saveSlot = $("#" + timeSlot).val();
+  console.log(saveSlot);
+  localStorage.setItem(timeSlot, saveSlot);
 }
 
 // event listeners for the save buttons
 
-$("#nine-btn").on("click", function () {
-    saveEvent("nine-am");
+$("#nine-btn").on("click", function() {
+  saveEvent("nine-am");
 });
-$("#ten-btn").on("click", function () {
-    saveEvent("ten-am");
+$("#ten-btn").on("click", function() {
+  saveEvent("ten-am");
 });
-$("#elev-btn").on("click", function () {
-    saveEvent("elev-am");
+$("#elev-btn").on("click", function() {
+  saveEvent("elev-am");
 });
-$("#twelve-btn").on("click", function () {
-    saveEvent("twelve-pm");
+$("#twelve-btn").on("click", function() {
+  saveEvent("twelve-pm");
 });
-$("#one-btn").on("click", function () {
-    saveEvent("one-pm");
+$("#one-btn").on("click", function() {
+  saveEvent("one-pm");
 });
-$("#two-btn").on("click", function () {
-    saveEvent("two-pm");
+$("#two-btn").on("click", function() {
+  saveEvent("two-pm");
 });
-$("#three-btn").on("click", function () {
-    saveEvent("three-pm");
+$("#three-btn").on("click", function() {
+  saveEvent("three-pm");
 });
-$("#four-btn").on("click", function () {
-    saveEvent("four-pm");
+$("#four-btn").on("click", function() {
+  saveEvent("four-pm");
 });
-$("#five-btn").on("click", function () {
-    saveEvent("five-pm");
+$("#five-btn").on("click", function() {
+  saveEvent("five-pm");
 });
