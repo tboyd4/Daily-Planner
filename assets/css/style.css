@@ -1,3 +1,7 @@
 .input-group-text {
     width: 120px;
 }
+
+#jumbo-date {
+    font-weight: bold;
+}
