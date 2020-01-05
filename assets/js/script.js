@@ -16,11 +16,12 @@ function currentTime() {
 
 currentTime();
 
-//these three functions will set the background color of the input according to the time of day. Past, Present, Future
+//these three functions will set the background color and ability to type of the input according to the time of day.
 
 function thePast(classArg) {
   $("#" + classArg).addClass("bg-secondary");
   $("#" + classArg).addClass("text-white");
+  $("#" + classArg).attr("readonly", "readonly");
 }
 
 function thePresent(classArg) {
@@ -125,6 +126,16 @@ function setBackground() {
     thePast("three-pm");
     thePast("four-pm");
     theFuture("five-pm");
+  } else if (currentTime() < 9 || currentTime() > 17) {
+    thePast("nine-am");
+    thePast("ten-am");
+    thePast("elev-am");
+    thePast("twelve-pm");
+    thePast("one-pm");
+    thePast("two-pm");
+    thePast("three-pm");
+    thePast("four-pm");
+    thePast("five-pm");
   }
 }
 
