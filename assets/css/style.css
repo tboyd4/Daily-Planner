@@ -9,3 +9,5 @@
 .past-color {
     background-color: blueviolet;
 }
+
+.form-control::placeholder { color: white;}
