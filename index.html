@@ -19,11 +19,17 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <div class="jumbotron jumbotron-fluid">
+                    <div class="jumbotron jumbotron-fluid" id="jumbo">
                         <div class="container">
                           <h1 class="display-4">Daily Planner</h1>
                           <p class="lead">Let's see what you have on the schedule for today!</p>
                           <strong><p class="lead" id="jumbo-date"></p></strong>
+                          <div class="row">
+                            <div class="col-md-10"></div>
+                            <div class="col-md-2">
+                              <button type="button" class="btn btn-secondary" id="clear-button">Clear Schedule</button>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -42,7 +48,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="nine-am">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="nine-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="nine-am" type="button" id="nine-btn">Save</button>
                   </div>
               </div>
             </div>
@@ -56,7 +62,7 @@
                       </div>
                     <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="ten-am">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="ten-btn">Save</button>
+                      <button class="btn btn-outline-secondary" value="ten-am" type="button" id="ten-btn">Save</button>
                     </div>
                 </div>
               </div>
@@ -70,7 +76,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="elev-am">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="elev-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="elev-am" type="button" id="elev-btn">Save</button>
                   </div>
               </div>
             </div>
@@ -84,7 +90,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="twelve-pm">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="twelve-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="twelve-pm" type="button" id="twelve-btn">Save</button>
                   </div>
               </div>
             </div>
@@ -98,7 +104,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="one-pm">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="one-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="one-pm" type="button" id="one-btn">Save</button>
                   </div>
               </div>
             </div>
@@ -112,7 +118,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="two-pm">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="two-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="two-pm" type="button" id="two-btn">Save</button>
                   </div>
               </div>
             </div>
@@ -126,7 +132,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="three-pm">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="three-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="three-pm" type="button" id="three-btn">Save</button>
                   </div>
               </div>
             </div>
@@ -140,7 +146,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="four-pm">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="four-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="four-pm" type="button" id="four-btn">Save</button>
                   </div>
               </div>
             </div>
@@ -154,7 +160,7 @@
                     </div>
                   <input type="text" class="form-control" placeholder="add events.. meetings.. tasks.." aria-label="add events.. meetings.. tasks.." aria-describedby="button-addon2" id="five-pm">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="five-btn">Save</button>
+                    <button class="btn btn-outline-secondary" value="five-pm" type="button" id="five-btn">Save</button>
                   </div>
               </div>
             </div>

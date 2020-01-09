@@ -11,3 +11,7 @@
 }
 
 .form-control::placeholder { color: white;}
+
+#jumbo {
+    padding-bottom: 15px;
+}
