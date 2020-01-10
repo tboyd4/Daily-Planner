@@ -2,7 +2,7 @@
 function loadEvents() {
   $("#nine-am").val(localStorage.getItem("nine-am"));
   $("#ten-am").val(localStorage.getItem("ten-am"));
-  $("#evel-am").val(localStorage.getItem("evel-am"));
+  $("#elev-am").val(localStorage.getItem("elev-am"));
   $("#twelve-pm").val(localStorage.getItem("twelve-pm"));
   $("#one-pm").val(localStorage.getItem("one-pm"));
   $("#two-pm").val(localStorage.getItem("two-pm"));
@@ -50,112 +50,23 @@ function theFuture(classArg) {
   $("#" + classArg).addClass("text-white");
 }
 
-// If Statement to assign color codes to inputs
-// function setBackground() {
-//   if (currentTime() === 9) {
-    thePresent("nine-am");
-    theFuture("ten-am");
-    theFuture("elev-am");
-    theFuture("twelve-pm");
-    theFuture("one-pm");
-    theFuture("two-pm");
-    theFuture("three-pm");
-    theFuture("four-pm");
-    theFuture("five-pm");
-//   } else if (currentTime() === 10) {
-//     thePast("nine-am");
-//     thePresent("ten-am");
-//     theFuture("elev-am");
-//     theFuture("twelve-pm");
-//     theFuture("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 11) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePresent("elev-am");
-//     theFuture("twelve-pm");
-//     theFuture("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 12) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePresent("twelve-pm");
-//     theFuture("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 13) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePresent("one-pm");
-//     theFuture("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 14) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePresent("two-pm");
-//     theFuture("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 15) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePreset("three-pm");
-//     theFuture("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 16) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePast("three-pm");
-//     thePresent("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() === 17) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePast("three-pm");
-//     thePast("four-pm");
-//     theFuture("five-pm");
-//   } else if (currentTime() < 9 || currentTime() > 17) {
-//     thePast("nine-am");
-//     thePast("ten-am");
-//     thePast("elev-am");
-//     thePast("twelve-pm");
-//     thePast("one-pm");
-//     thePast("two-pm");
-//     thePast("three-pm");
-//     thePast("four-pm");
-//     thePast("five-pm");
-//   }
-// }
+// two arrays to help assign the backgrounds and properties of the time slots
 
-// setBackground();
+var hourArray = ["nine-am", "ten-am", "elev-am", "twelve-pm", "one-pm", "two-pm", "three-pm", "four-pm", "five-pm"];
+var testHour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+
+// this loop will test each time against the current time and use the functions to set those color codes and properties
+
+for (var i = 0; i < hourArray.length; i++) {
+  if (testHour[i] < currentTime()) {
+    thePast(hourArray[i])
+  } else if (testHour[i] === currentTime()) {
+    thePresent(hourArray[i])
+  } else if (testHour[i] > currentTime()) {
+    theFuture(hourArray[i]);
+  }
+}
+
 
 // function to save input value into local storage
 
